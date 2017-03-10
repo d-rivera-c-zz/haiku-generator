@@ -1,0 +1,9 @@
+{
+  "name": "haiku-generator",
+  "version": "0.0.2",
+  "dependencies": {
+    "random-word": "^1.0.2",
+    "rest-request": "^1.0.12",
+    "syllable": "^2.0.0"
+  }
+}
