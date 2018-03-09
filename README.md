@@ -32,7 +32,7 @@ $> node haiku.js
 You can suggest a word so the haiku is related to the "theme". Uses an [API](https://api.datamuse.com) to get related words.
 
 ````
-$> cd v1
+$> cd v2
 $> npm install
 $> node haiku.js wind // haiku hopefully related to wind
 ````
