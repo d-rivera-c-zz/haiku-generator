@@ -2,13 +2,13 @@
  * Generates haikus, just because.
  * It can generate pure random haikus or others that are hopefully more logical/related
  * 
- * --all-random       uses all random unrelated words
- * --random           uses random start word, but haiku must relate to the random word
- * --mandatory        words that must appear in the haiku
- * --related          words to create a haiku from, the final haiku could be "related" but not necessarily using the words
- * --opposite         haiku must be contrary or using antonyms for these words
- * --random           percentage of aleatory words in the haiku
- * --smart            use learned knowledge from previous liked haikus
+ * --all_random       uses all random unrelated words. Default behaviour.
+ * !not-implemented --random           uses random start word, but haiku must relate to the random word
+ * !not-implemented --mandatory        words that must appear in the haiku
+ * !not-implemented --theme            words to create a haiku from, the final haiku could be "related" but not necessarily using the words
+ * !not-implemented --opposite         haiku must be contrary or using antonyms for these words
+ * !not-implemented --smart            use learned knowledge from previous liked haikus
+ * !not-implemented --sayit            say it!
  */
 
 var Stdio = require('stdio');
@@ -22,7 +22,8 @@ var RestAPI = new Request('https://api.datamuse.com');
  * Gets options from command line 
  */
 var commands = Stdio.getopt({
-  'all_random': { key: 'a', description: 'Use all random unrelated words for the whole poem'}
+  'all_random': { key: 'a', description: 'Use all random unrelated words for the whole poem'},
+  'theme': { key: 't', description: 'words to create a haiku from, the result could be related to the theme but not use the exact word'}
 });
 
 var createRandomLine = function (syllableCount) {
@@ -99,13 +100,16 @@ var haiku = function (mainWords) {
   );
 };
 
-// // if there's no words requested, the haiku will be all random words
-// if (commands.words === void 0) {
-//   randomHaiku();
-// } else {
-//   haiku(commands.words);
-// }
 
+
+/* Main command */
 if (commands.all_random) {
   randomHaiku();
+} else {
+  // if there's no words requested, the haiku will be all random words
+  if (!commands.theme) {
+    randomHaiku();
+  } else {
+    haiku(commands.args);
+  }
 }
