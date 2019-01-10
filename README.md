@@ -13,29 +13,40 @@ Just generates haikus. In english.
 > - Haiku does not have to rhyme, in fact many times it does not rhyme at all  
 > - Some haiku can include the repetition of words or sounds
 
-## Versions
-
-There's a lot of ways to do this, so decided to keep the different versions so you can play with all of them.
-
-#### V1
-
-Uses random words for the whole haiku. These are _real_ english words.
+## Installation
 
 ````
-$> cd v1
+$> git clone https://github.com/d-rivera-c/haiku-generator.git
+$> cd haiku-generator
 $> npm install
+````
+
+## Usage
+
+Call the haiku generator default behaviour. Uses random words for the whole haiku. These are _real_ english words.
+
+````
 $> node haiku.js
 ````
 
-#### V2
+### Options
+
+There's a few cli options you can use to generate different type of haikus
+
+#### --all_random
+
+Default behaviour, uses all random unrelated words.
+
+#### -- theme (word)
 
 You can suggest a word so the haiku is related to the "theme". Uses an [API](https://api.datamuse.com) to get related words.
+The final haiku could be "related" but not necessarily using the words.
 
 ````
-$> cd v2
-$> npm install
-$> node haiku.js wind // haiku hopefully related to wind
+$> node haiku.js --theme wind // haiku hopefully related to wind
 ````
+
+#### Others -- TO BE IMPLEMENTED
 
 ## Make it talk
 

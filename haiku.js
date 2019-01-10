@@ -5,7 +5,7 @@
  * --all_random       uses all random unrelated words. Default behaviour.
  * !not-implemented --random           uses random start word, but haiku must relate to the random word
  * !not-implemented --mandatory        words that must appear in the haiku
- * !not-implemented --theme            words to create a haiku from, the final haiku could be "related" but not necessarily using the words
+ * --theme            words to create a haiku from, the final haiku could be "related" but not necessarily using the words
  * !not-implemented --opposite         haiku must be contrary or using antonyms for these words
  * !not-implemented --smart            use learned knowledge from previous liked haikus
  * !not-implemented --sayit            say it!
