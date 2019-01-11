@@ -12,7 +12,7 @@
  */
 
 var Stdio = require('stdio');
-var RandomWord = require('random-word');
+var RandomWord = require('random-words');
 var Syllable = require('syllable');
 var Request = require('rest-request');
 var RestAPI = new Request('https://api.datamuse.com');
